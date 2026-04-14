@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace BudgetApp.Domain.Entities
 {
-    internal class Budget
+    public class Budget
     {
+        public int Id { get; set; }
+        public string Category { get; set; } = string.Empty;
+        public decimal MontlyLimit { get; set; }
+        public decimal SpentAmount { get; set; } = 0;
+        public DateTime Month { get; set; }
     }
 }
