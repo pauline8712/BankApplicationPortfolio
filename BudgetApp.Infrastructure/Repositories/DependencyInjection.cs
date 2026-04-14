@@ -1,12 +1,2 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BudgetApp.Infrastructure.Repositories
-{
-    internal class DependencyInjection
-    {
-    }
-}
+﻿using BudgetApp.Domain.Entities;
+using Microsoft.EntityFrameworkCore; //Jag hämtar nu alla mina entitieter från Domain och EF Core biblioteket.
