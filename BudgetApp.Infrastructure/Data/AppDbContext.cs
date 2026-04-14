@@ -20,5 +20,15 @@ namespace BudgetApp.Infrastructure.Data //talar om var i projektet den här klas
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Budget> Budgets { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Transaction>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Amount).IsRequired();
+                entity.Property(e => e.Description).HasMaxLength(200);
+            });
+        }
     }
 }
